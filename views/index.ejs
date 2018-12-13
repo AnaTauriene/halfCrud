@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Savarankiška užduotis 2018.12.07</title>
+    <meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+    <meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+    <link rel="stylesheet" href="/resourses/CSS/style.css">
+    <script src="/resourses/JS/table.js"></script>
+</head>
+<body>
+    <h2>Savarankiška užduotis 2018.12.07</h2>
+
+<div class="form">
+	<form id="form" action="/registration" method ="POST">
+		<input id="name" type="text" placeholder="name" name="name" >
+		<input  id="surname" type="text" placeholder="surname" name="surname" >
+		<input id="email" type="email" placeholder="email" name="email" >
+		<input id="password" type="password" placeholder="password" name="password" >
+        <button name="button" type="button" onclick="validate()">SUBMIT</button>
+        <button name="button" type="button" onclick='showTable()'>Rodyti lentelę</button>
+	</form>
+</div>
+
+<table class="registration visibleTable" id='hiddenTable'>
+        <tr class="regHeader">
+            <th> Vardas </th>
+            <th> Pavarde </th>
+            <th> Email </th>
+        </tr>
+    <% for(let i=0; i<registration.length; i++){%>
+        <tr class="regOne">
+            <td><%=registration[i].name %></td>
+            <td><%= registration[i].surname %></td>
+            <td><%= registration[i].email %></td>
+        </tr>
+        <% } %>
+</table> 
+    
+<!--JavaScript between <% %> is executed. 
+    JavaScript between <%= %> adds HTML to the result. -->
+
+</body>
+</html>
